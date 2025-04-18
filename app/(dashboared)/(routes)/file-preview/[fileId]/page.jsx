@@ -1,4 +1,5 @@
 "use client";
+import LoaderPage from "@/app/_components/LoaderPage";
 import { app } from "@/firebaseconfig";
 import { useUser } from "@clerk/nextjs";
 import { getFirestore, updateDoc } from "firebase/firestore";
@@ -18,6 +19,7 @@ const FilePreview = ({ params }) => {
   const [sendToEmail, setSendToEmail] = useState("");
   const [sendingEmail, setSendingEmail] = useState(false);
   const [previewFile, setPreviewFile] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getData(getfileId);
@@ -28,6 +30,7 @@ const FilePreview = ({ params }) => {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       setPreviewFile(docSnap.data());
+      setLoading(false);
     } else {
       console.log("No such document!");
     }
@@ -77,6 +80,13 @@ const FilePreview = ({ params }) => {
       setSendingEmail(false);
     }
   };
+
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-screen w-full">
+        <LoaderPage />
+      </div>
+    );
 
   return (
     <div className="flex flex-col items-center justify-center h-screen w-full mt-30 md:mt-0 md:w-full p-5">

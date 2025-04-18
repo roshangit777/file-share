@@ -1,0 +1,30 @@
+{
+  "name": "fileshare",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.12.3",
+    "axios": "^1.8.2",
+    "cloudinary": "^2.5.1",
+    "firebase": "^11.4.0",
+    "lucide-react": "^0.477.0",
+    "multer": "^1.4.5-lts.1",
+    "next": "15.2.1",
+    "next-connect": "^1.0.0",
+    "nodemailer": "^6.10.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
+    "resend": "^4.1.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
+}

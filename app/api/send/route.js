@@ -108,7 +108,7 @@ export async function POST(req) {
                 )}MB</span></h3>
             </div>
             <a class="button" href=${
-              "http://localhost:3000/f/" + previewFile?.id
+              "https://file-share-rdmr.onrender.com/f/" + previewFile?.id
             }>Download File</a>
             <p>Thank you, <br> ${user?.fullName}</p>
         </main>

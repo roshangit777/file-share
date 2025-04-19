@@ -10,7 +10,7 @@ const FileItem = ({ file, loading }) => {
     <div className="bg-white w-[350px] md:w-[800px] h-auto flex flex-col gap-5 items-center p-10 rounded-3xl overflow-hidden">
       <h1 className="md:text-4xl text-2xl font-semibold text-center">
         <span className="text-primary">
-          {file?.userName ? file?.userName : "The Sender"}
+          {file?.userName ? file.userName : "The Sender"}
         </span>{" "}
         Shared the file with You
       </h1>

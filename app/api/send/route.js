@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     const { recepientEmail, previewFile, user } = await req.json();
-
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -98,7 +97,11 @@ export async function POST(req) {
         <div class="divider"></div>
         
         <main>
-            <h3>From: <strong>${user?.fullName}</strong>,</h3>
+            <h3>From: <strong>${
+              user?.fullName
+                ? user.fullName
+                : user?.emailAddresses[0]?.emailAddress
+            }</strong>,</h3>
             <p>I hope you're doing well. I'm sharing a file with you. Here are the details:</p>
             <div class="file-details" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <h3>File Name: ${previewFile?.fileName}</h3>
@@ -110,7 +113,11 @@ export async function POST(req) {
             <a class="button" href=${
               "https://file-share-rdmr.onrender.com/f/" + previewFile?.id
             }>Download File</a>
-            <p>Thank you, <br> ${user?.fullName}</p>
+            <p>Thank you, <br> ${
+              user?.fullName
+                ? user.fullName
+                : user?.emailAddresses[0]?.emailAddress
+            }</p>
         </main>
     </div>
 </body>

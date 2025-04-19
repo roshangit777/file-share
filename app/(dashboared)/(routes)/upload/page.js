@@ -46,10 +46,10 @@ const Upload = () => {
         toast.success("Upload completed!", { id: loadingToast });
         router.push(`/file-preview/${docId}`);
       } else {
-        toast.error("Upload failed! Please try again.");
+        toast.error("Upload failed! Please try again.", { id: loadingToast });
       }
     } catch (error) {
-      toast.error("Upload failed!");
+      toast.error("Upload failed!", { id: loadingToast });
     } finally {
       setUploading(false);
     }

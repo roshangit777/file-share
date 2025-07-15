@@ -51,6 +51,7 @@ const UploadForm = ({ uploading, handleUpload }) => {
           <input
             id="dropzone-file"
             type="file"
+            accept="image/*"
             className="hidden"
             onChange={(event) => onFileSelect(event.target.files[0])}
           />

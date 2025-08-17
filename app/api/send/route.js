@@ -110,9 +110,7 @@ export async function POST(req) {
                   2
                 )}MB</span></h3>
             </div>
-            <a class="button" href=${
-              "https://file-share-seven-amber.vercel.app/f/" + previewFile?.id
-            }>Download File</a>
+            <a class="button" href=${`https://file-share-seven-amber.vercel.app/f/${previewFile?.id}`}>Download File</a>
             <p>Thank you, <br> ${
               user?.fullName
                 ? user.fullName

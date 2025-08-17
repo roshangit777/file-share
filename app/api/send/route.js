@@ -111,7 +111,7 @@ export async function POST(req) {
                 )}MB</span></h3>
             </div>
             <a class="button" href=${
-              "https://file-share-rdmr.onrender.com/f/" + previewFile?.id
+              "https://file-share-seven-amber.vercel.app/f/" + previewFile?.id
             }>Download File</a>
             <p>Thank you, <br> ${
               user?.fullName

@@ -1,6 +1,5 @@
 import { Geist, Outfit } from "next/font/google";
 import "./globals.css";
-import Header from "./_components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 

@@ -39,9 +39,11 @@ const Upload = () => {
           userName: user.fullName,
           password: "",
           id: docId,
-          shortUrl: process.env.NEXT_PUBLIC_BASE_URL + "f/" + docId,
+          shortUrl: "https://file-share-seven-amber.vercel.app/" + "f/" + docId,
           previewUrl:
-            process.env.NEXT_PUBLIC_BASE_URL + "file-preview/" + docId,
+            "https://file-share-seven-amber.vercel.app/" +
+            "file-preview/" +
+            docId,
         });
         toast.success("Upload completed!", { id: loadingToast });
         router.push(`/file-preview/${docId}`);
